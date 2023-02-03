@@ -72,7 +72,12 @@ result : luis  */
 
 
 
-/* continue exercise:  */
+
+
+//declaring button press
+
+
+//continue exercise:  
 let numberOfButtons = document.querySelectorAll(".drum").length;
 
 /*loot thru those elements--start om 0*/
@@ -84,7 +89,27 @@ for(let i = 0; i < numberOfButtons; i++){
 
    let buttonInnerHTML = this.innerHTML;
 
-switch (buttonInnerHTML) {
+   makeSound(buttonInnerHTML);
+
+    })
+
+} ;
+
+
+
+
+// declaring keyboard press 
+
+
+document.addEventListener("keypress", function(event){
+ /*  alert("key was pressed"); */
+makeSound(event.key);
+})
+
+
+function makeSound(key){
+
+  switch (key) {
     case "d":
         var tom1 = new Audio("sounds/tom-1.mp3");
       tom1.play();
@@ -131,7 +156,7 @@ switch (buttonInnerHTML) {
 }
 
 
-});
+}
 
-} 
+
 
