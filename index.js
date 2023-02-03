@@ -91,6 +91,8 @@ for(let i = 0; i < numberOfButtons; i++){
 
    makeSound(buttonInnerHTML);
 
+   buttonAnimation(buttonInnerHTML);
+
     })
 
 } ;
@@ -104,6 +106,7 @@ for(let i = 0; i < numberOfButtons; i++){
 document.addEventListener("keypress", function(event){
  /*  alert("key was pressed"); */
 makeSound(event.key);
+buttonAnimation(event.key);
 })
 
 
@@ -157,6 +160,22 @@ function makeSound(key){
 
 
 }
+
+
+
+/* add animation on the screen, when click keyboard to be sure you click the right letter keyboard */
+ 
+function buttonAnimation(currentKey)  {
+   var animation = document.querySelector("." + currentKey) //in html each button as a class , and we calling by the class thats why y have the "."
+   // assign a value to a variable(animation) 
+
+   animation.classList.add("pressed");
+
+   setTimeout(function(){
+    animation.classList.remove("pressed");
+   }, 100);
+}
+
 
 
 
